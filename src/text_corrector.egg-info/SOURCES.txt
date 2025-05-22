@@ -1,0 +1,10 @@
+setup.py
+src/text_corrector.egg-info/PKG-INFO
+src/text_corrector.egg-info/SOURCES.txt
+src/text_corrector.egg-info/dependency_links.txt
+src/text_corrector.egg-info/entry_points.txt
+src/text_corrector.egg-info/requires.txt
+src/text_corrector.egg-info/top_level.txt
+tests/test_grammar.py
+tests/test_spell.py
+tests/test_utils.py

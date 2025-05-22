@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: text_corrector
+Version: 0.1.0
+Summary: Инструмент для поиска и исправления ошибок в тексте (RU)
+Author: Ваше Имя
+Requires-Python: >=3.7
+Requires-Dist: language-tool-python>=2.7.0
+Requires-Dist: pyspellchecker>=0.6.2
+Requires-Dist: click>=8.1.0
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary

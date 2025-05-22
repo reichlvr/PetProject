@@ -1,0 +1,2 @@
+[console_scripts]
+text-corrector = corrector.cli:main
