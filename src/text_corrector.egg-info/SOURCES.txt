@@ -1,4 +1,11 @@
+README.md
 setup.py
+src/corrector/__init__.py
+src/corrector/cli.py
+src/corrector/grammar.py
+src/corrector/process_text.py
+src/corrector/spell.py
+src/corrector/utils.py
 src/text_corrector.egg-info/PKG-INFO
 src/text_corrector.egg-info/SOURCES.txt
 src/text_corrector.egg-info/dependency_links.txt
