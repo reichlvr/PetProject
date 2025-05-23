@@ -6,14 +6,15 @@ def remove_repeats(text: str) -> str:
     return re.sub(r'\b(\w+)(\s+\1\b)+', r'\1', text, flags=re.IGNORECASE)
 
 def highlight(text: str, errors: List) -> str:
-    """Точная подсветка ошибок."""
-    highlighted = []
-    last_pos = 0
-    for error in sorted(errors, key=lambda x: x.offset):
-        start = error.offset
+    """Подсвечивает ошибки в квадратных скобках по offset и errorLength."""
+    sorted_errors = sorted(errors, key=lambda x: x.offset, reverse=True)
+    highlighted = list(text)
+    offset = 0
+    for error in sorted_errors:
+        start = error.offset + offset
         end = start + error.errorLength
-        highlighted.append(text[last_pos:start])
-        highlighted.append(f'[{text[start:end]}]')
-        last_pos = end
-    highlighted.append(text[last_pos:])
+        # Вставляем скобки
+        highlighted.insert(end, ']')
+        highlighted.insert(start, '[')
+        offset += 2
     return ''.join(highlighted)
