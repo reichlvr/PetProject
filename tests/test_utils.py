@@ -12,4 +12,4 @@ def test_remove_repeats():
 def test_highlight():
     text = "ошибка"
     err = DummyError(0, 3)
-    assert highlight(text, [err]).startswith("[ош]ибка")
+    assert highlight(text, [err]).startswith("[оши]бка")
