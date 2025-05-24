@@ -1,15 +1,16 @@
-from .spell import correct_spelling
-from .grammar import correct_grammar
-from .utils import remove_repeats, highlight
+from .grammar import get_grammar_errors
+from .utils import find_repeats, highlight
 
 def process_text(text: str) -> dict:
-    corrected_grammar, grammar_errors = correct_grammar(text)
-    corrected_spelling = correct_spelling(corrected_grammar)
-    final_text = remove_repeats(corrected_spelling)
-    highlighted = highlight(text, grammar_errors)
+    """Обрабатывает текст и возвращает ошибки для интерактивного режима."""
+    repeat_errors = find_repeats(text)  
+    grammar_errors = get_grammar_errors(text)
+    all_errors = repeat_errors + grammar_errors
+    all_errors.sort(key=lambda x: x['offset'])  
+    highlighted = highlight(text, all_errors)   
     return {
         'original': text,
-        'corrected': final_text,
+        'errors': all_errors,
         'highlighted': highlighted,
-        'errors_count': len(grammar_errors)
+        'errors_count': len(all_errors)
     }

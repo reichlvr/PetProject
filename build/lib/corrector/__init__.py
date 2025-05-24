@@ -1,9 +1,9 @@
-from .process_text import process_text  # ключевая строка!
+from .process_text import process_text
 
 __all__ = [
     'correct_spelling',
     'correct_grammar',
     'remove_repeats',
     'highlight',
-    'process_text',  # добавьте это
+    'process_text', 
 ]
