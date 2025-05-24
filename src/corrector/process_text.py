@@ -11,5 +11,4 @@ def process_text(text: str) -> dict:
         'original': text,
         'corrected': final_text,
         'highlighted': highlighted,
-        'errors_count': len(grammar_errors)
     }
