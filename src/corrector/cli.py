@@ -14,7 +14,6 @@ def main(interactive, input_file, output_file):
         click.echo(res['highlighted'])
         click.echo("\n--- Исправленный текст ---")
         click.echo(res['corrected'])
-        click.echo(f"\n🔍 Найдено ошибок: {res['errors_count']}")
     elif input_file and output_file:
         text = open(input_file, 'r', encoding='utf-8').read()
         res = process_text(text)
